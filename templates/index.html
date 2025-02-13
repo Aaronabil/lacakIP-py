@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacak IP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lacak Lokasi Berdasarkan IP</h1>
+        <form action="/track" method="post" class="ip-form">
+            <label for="ip_address">Masukkan IP (Opsional): </label>
+            <input type="text" id="ip_address" name="ip_address" placeholder="Contoh: 8.8.8.8">
+            <button type="submit">Lacak IP</button>
+        </form>
+        <br>
+        <p>Atau, sistem akan melacak IP Anda secara otomatis saat Anda mengakses website ini.</p>
+        <br>
+        <a href="/history" class="history-link">Lihat Riwayat Pelacakan IP</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

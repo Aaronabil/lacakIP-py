@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pelacakan IP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Riwayat Pelacakan IP</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>IP Address</th>
+                    <th>Lokasi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in ip_locations %}
+                <tr>
+                    <td>{{ record.id }}</td>
+                    <td>{{ record.ip_address }}</td>
+                    <td>{{ record.location }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/" class="back-link">Kembali ke Halaman Utama</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

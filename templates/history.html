@@ -4,52 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riwayat Pelacakan IP</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            margin: 20px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            background: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-        .back-link:hover {
-            background: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 space-y-4">
+    <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Hasil Pelacakan IP</h1>
+    <!-- <div class="container">
         <h1>Riwayat Pelacakan IP</h1>
 
         {% if ip_locations %}
@@ -77,8 +37,36 @@
 
         <br>
         <a href="{{ url_for('index') }}" class="back-link">Kembali ke Halaman Utama</a>
-    </div>
+    </div> -->
 
+    <div class="mx-auto max-w-full bg-white p-6 rounded-lg shadow-lg">
+        <div class="overflow-x-auto">
+        {% if ip_locations %}
+            <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+            <thead class="ltr:text-left rtl:text-right">
+                <tr>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-center">No.</th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-center">IP Address</th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Lokasi</th>
+                </tr>
+            </thead>
+        
+            <tbody class="divide-y divide-gray-200">
+                {% for record in ip_locations %}
+                <tr class="odd:bg-gray-50">
+                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{{ record.id }}</td>
+                <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ record.ip_address }}</td>
+                <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ record.location }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+            {% else %}
+            <p>Tidak ada data riwayat IP yang tersedia.</p>
+        {% endif %}
+        </div>
+  </div>
+  <a href="/" class="mt-4 w-full max-w-md text-center bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">Kembali ke Halaman Utama</a>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

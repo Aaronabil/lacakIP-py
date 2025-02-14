@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import requests
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 
@@ -8,11 +9,13 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///ip_locations.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)  # migrasi database bil
 
 class IPLocation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ip_address = db.Column(db.String(50), nullable=False)
-    location = db.Column(db.String(100), nullable=False)
+    location = db.Column(db.String(255), nullable=False)
+    abuse_info = db.Column(db.Text, nullable=True)  # Tambahkan kolom ini
 
 # API Key untuk ipinfo.io
 ACCESS_TOKEN = 'f7eec03ef1f1ef'  # token yang valid
@@ -31,7 +34,25 @@ def track_ip():
     data = response.json()
 
     if response.status_code == 200:
-        location = data.get('city', 'Unknown') + ", " + data.get('region', 'Unknown') + ", " + data.get('country', 'Unknown')
+        city = data.get('city', 'Unknown')
+        region = data.get('region', 'Unknown')
+        country = data.get('country', 'Unknown')
+        org = data.get('org', 'Unknown')  # ISP
+        timezone = data.get('timezone', 'Unknown')
+        loc = data.get('loc', 'Unknown')  # Latitude, Longitude
+
+        # Data Abuse (jika tersedia)
+        abuse_info = data.get('abuse', {})
+        abuse_address = abuse_info.get('address', 'Unknown')
+        abuse_country = abuse_info.get('country', 'Unknown')
+        abuse_email = abuse_info.get('email', 'Unknown')
+        abuse_name = abuse_info.get('name', 'Unknown')
+        abuse_network = abuse_info.get('network', 'Unknown')
+        abuse_phone = abuse_info.get('phone', 'Unknown')
+
+         # Format lokasi dan abuse data dengan rapi
+        location = f"{city}, {region}, {country} | Koordinat: {loc} | ISP: {org} | Zona Waktu: {timezone}"
+        abuse_details = f"Nama: {abuse_name} | Alamat: {abuse_address} | Negara: {abuse_country} | Email: {abuse_email} | Jaringan: {abuse_network} | Telepon: {abuse_phone}"
 
         # Simpan data IP dan lokasi ke dalam database
         new_ip_location = IPLocation(ip_address=user_ip, location=location)

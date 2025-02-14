@@ -27,6 +27,7 @@ def index():
 @app.route('/track', methods=['POST'])
 def track_ip():
     user_ip = request.form['ip_address'] if 'ip_address' in request.form else request.remote_addr
+    print(f"User IP: {user_ip}")  # Debug: Cek apakah IP benar-benar diterima
     
     # Mengirim request ke API ipinfo.io untuk mendapatkan lokasi berdasarkan IP
     url = f'https://ipinfo.io/{user_ip}/json?token={ACCESS_TOKEN}'

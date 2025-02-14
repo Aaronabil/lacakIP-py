@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lacak IP</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <h1>Lacak Lokasi Berdasarkan IP</h1>
         <form action="/track" method="post" class="ip-form">
             <label for="ip_address">Masukkan IP (Opsional): </label>
@@ -18,7 +19,57 @@
         <p>Atau, sistem akan melacak IP Anda secara otomatis saat Anda mengakses website ini.</p>
         <br>
         <a href="/history" class="history-link">Lihat Riwayat Pelacakan IP</a>
+    </div> -->
+    <!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg">
+      <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Lacak Ip</h1>
+  
+      <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
+        Website untuk melacak IP menggunakan python.
+      </p>
+  
+      <form action="/track" method="post" class="mt-6 mb-0 space-y-4 rounded-xl p-4 shadow-xl sm:p-6 lg:p-8">
+        <p class="text-center text-lg font-medium"></p>
+  
+        <div>
+          <label for="ip_address" class="sr-only">IP</label>
+  
+          <div class="relative">
+            <input
+              type="text"
+              class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs" 
+              id="ip_address" name="ip_address"
+              placeholder="Masukkan IP Address (Opsional)"
+            />
+  
+            <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                  </svg>
+            </span>
+          </div>
+        </div>  
+        <button
+          type="submit"
+          class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white cursor-pointer"
+        >
+          Lacak
+        </button>
+  
+        <p class="text-center text-sm text-blue-500">
+          <a class="underline history-link" href="/history">Lihat Riwayat Pelacakan IP</a>
+        </p>
+      </form>
     </div>
+  </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
 </body>
 </html>

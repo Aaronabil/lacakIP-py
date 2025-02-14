@@ -4,18 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Pelacakan IP</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Hasil Pelacakan Lokasi</h1>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 space-y-4">
+    <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Hasil Pelacakan Ip</h1>
+    <div class="mx-auto max-w-md bg-white p-6 rounded-lg shadow-lg">
+        <!-- <h1>Hasil Pelacakan Lokasi</h1>
         <p><strong>IP Address:</strong> {{ ip }}</p>
         <p><strong>Lokasi:</strong> {{ location }}</p>
         <p><strong>Informasi Penyalahgunaan (Abuse):</strong></p> 
         <p>{{ abuse }}</p>
         <br>
-        <a href="/">Kembali ke Halaman Utama</a>
+        <a href="/">Kembali ke Halaman Utama</a> -->
+        <div class="flow-root">
+            <dl class="-my-3 divide-y divide-gray-100 text-sm">
+              <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-medium text-gray-900">IP Address</dt>
+                <dd class="text-gray-700 sm:col-span-2">{{ ip }}</dd>
+              </div>
+          
+              <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-medium text-gray-900">Lokasi</dt>
+                <dd class="text-gray-700 sm:col-span-2">{{ location }}</dd>
+              </div>
+          
+              <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-medium text-gray-900">Informasi Penyalahgunaan (Abuse)</dt>
+                <dd class="text-gray-700 sm:col-span-2">{{ abuse }}</dd>
+              </div>
+          
+              <!-- <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-medium text-gray-900">Salary</dt>
+                <dd class="text-gray-700 sm:col-span-2">$1,000,000+</dd>
+              </div>
+          
+              <div class="grid grid-cols-1 gap-1 py-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-medium text-gray-900">Bio</dt>
+                <dd class="text-gray-700 sm:col-span-2">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et facilis debitis explicabo
+                  doloremque impedit nesciunt dolorem facere, dolor quasi veritatis quia fugit aperiam
+                  aspernatur neque molestiae labore aliquam soluta architecto?
+                </dd>
+              </div> -->
+            </dl>
+          </div>
     </div>
+    <a href="/" class="mt-4 w-full max-w-md text-center bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">Kembali ke Halaman Utama</a>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

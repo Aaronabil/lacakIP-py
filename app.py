@@ -71,7 +71,7 @@ def track_ip():
 
         return render_template('result.html', ip=user_ip, location=location)
     else:
-        return 'Gagal mendapatkan data lokasi.'
+        return render_template('error.html')
 
 @app.route('/history')
 def history():

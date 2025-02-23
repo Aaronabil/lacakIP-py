@@ -44,7 +44,7 @@
           <div class="relative">
             <input
               type="text"
-              class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs" 
+              class="w-full rounded-lg border p-4 pe-12 text-sm shadow-xs placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500" 
               id="ip_address" name="ip_address"
               placeholder="Masukkan IP Address (Opsional)"
             />
@@ -58,13 +58,13 @@
         </div>  
         <button
           type="submit"
-          class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white cursor-pointer"
+          class="block w-full rounded-full bg-indigo-600 px-5 py-3 text-sm font-medium text-white cursor-pointer focus:ring focus:ring-indigo-300 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-blue-500"
         >
           Lacak
         </button>
   
         <p class="text-center text-sm text-blue-500">
-          <a class="underline history-link" href="/history">Lihat Riwayat Pelacakan IP</a>
+          <a class="block w-full rounded-full bg-red-500 px-5 py-3 text-sm font-medium text-white cursor-pointer hover:bg-red-600 history-link" href="/history">Lihat Riwayat Pelacakan IP</a>
         </p>
       </form>
     </div>

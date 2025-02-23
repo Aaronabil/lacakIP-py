@@ -82,10 +82,20 @@ Proyek ini adalah aplikasi web sederhana untuk melacak lokasi berdasarkan **Alam
    - Jika **IP tidak ditemukan** atau **API tidak merespons**, halaman error akan ditampilkan.  
 
 ---
-
-## Struktur Proyek  
-├── app.py # Main file untuk menjalankan Flask ├── templates/ # Folder untuk HTML (Jinja2 Template) │ ├── index.html # Halaman utama input IP │ ├── result.html # Hasil pencarian IP │ └── history.html # Riwayat pencarian ├── static/ # Static files (CSS, JS, dll) ├── ip_locations.db # Database SQLite ├── requirements.txt # Daftar dependensi └── README.md # Dokumentasi proyek
-
+ 
+## **Struktur Direktori**  
+```plaintext
+Lacak-IP/
+├── templates/
+│   ├── index.html       # Halaman utama
+│   └── history.html     # Halaman riwayat
+├── static/              # File statis (CSS, JS, dll.)
+├── app.py               # Main app Flask
+├── models.py            # Model database
+├── migrations/          # Folder migrasi database
+├── venv/                # Virtual environment (tidak perlu di-push ke repo)
+└── README.md            # Dokumentasi
+```
 ---
 
 ## Contoh Hasil Pencarian  
@@ -116,5 +126,7 @@ Kontribusi sangat diterima! Silakan:
 
 ## Kontak  
 Jika ada pertanyaan atau saran, silakan hubungi:  
-- **Email**: [ritrama705@gmail.com](ritrama705@gmail.com)  
-- **GitHub**: [IsFaktuear](https://github.com/IsFaktuear)  
+- **Email 1**: [ritrama705@gmail.com](ritrama705@gmail.com)
+- **Email 2**: [ritrama705@gmail.com](ritrama705@gmail.com) 
+- **GitHub 1**: [IsFaktuear](https://github.com/IsFaktuear)
+- **GitHub 2**: [IsFaktuear](https://github.com/IsFaktuear) 

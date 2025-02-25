@@ -127,6 +127,6 @@ Kontribusi sangat diterima! Silakan:
 ## Kontak  
 Jika ada pertanyaan atau saran, silakan hubungi:  
 - **Email 1**: [ritrama705@gmail.com](ritrama705@gmail.com)
-- **Email 2**: [ritrama705@gmail.com](ritrama705@gmail.com) 
+- **Email 2**: [nabilmuhamad630@gmail.com](nabilmuhamad630@gmail.com) 
 - **GitHub 1**: [IsFaktuear](https://github.com/IsFaktuear)
-- **GitHub 2**: [IsFaktuear](https://github.com/Aaronabil) 
+- **GitHub 2**: [Aaronabil](https://github.com/Aaronabil) 

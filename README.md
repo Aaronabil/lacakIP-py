@@ -18,8 +18,7 @@ Proyek ini adalah aplikasi web sederhana untuk melacak lokasi berdasarkan **Alam
 - **Flask**: Framework web untuk backend.
 - **Tailwind**: Framework web untuk frontend.  
 - **SQLite**: Database lokal untuk menyimpan riwayat pencarian IP.  
-- **SQLAlchemy ORM**: Untuk mempermudah manipulasi database.  
-- **Jinja2 Template**: Untuk merender halaman HTML secara dinamis.  
+- **SQLAlchemy ORM**: Untuk mempermudah manipulasi database.    
 - **ipinfo.io API**: Untuk mendapatkan data geolokasi berdasarkan IP.  
 
 ---

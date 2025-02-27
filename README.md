@@ -15,10 +15,10 @@ Proyek ini adalah aplikasi web sederhana untuk melacak lokasi berdasarkan **Alam
 ---
 
 ## Teknologi yang Digunakan  
-- **Flask**: Framework web untuk backend.  
+- **Flask**: Framework web untuk backend.
+- **Tailwind**: Framework web untuk frontend.  
 - **SQLite**: Database lokal untuk menyimpan riwayat pencarian IP.  
-- **SQLAlchemy ORM**: Untuk mempermudah manipulasi database.  
-- **Jinja2 Template**: Untuk merender halaman HTML secara dinamis.  
+- **SQLAlchemy ORM**: Untuk mempermudah manipulasi database.    
 - **ipinfo.io API**: Untuk mendapatkan data geolokasi berdasarkan IP.  
 
 ---
@@ -93,7 +93,6 @@ Lacak-IP/
 ├── app.py               # Main app Flask
 ├── models.py            # Model database
 ├── migrations/          # Folder migrasi database
-├── venv/                # Virtual environment (tidak perlu di-push ke repo)
 └── README.md            # Dokumentasi
 ```
 ---
@@ -127,6 +126,6 @@ Kontribusi sangat diterima! Silakan:
 ## Kontak  
 Jika ada pertanyaan atau saran, silakan hubungi:  
 - **Email 1**: [ritrama705@gmail.com](ritrama705@gmail.com)
-- **Email 2**: [ritrama705@gmail.com](ritrama705@gmail.com) 
+- **Email 2**: [nabilmuhamad630@gmail.com](nabilmuhamad630@gmail.com) 
 - **GitHub 1**: [IsFaktuear](https://github.com/IsFaktuear)
-- **GitHub 2**: [IsFaktuear](https://github.com/IsFaktuear) 
+- **GitHub 2**: [Aaronabil](https://github.com/Aaronabil) 

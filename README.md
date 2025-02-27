@@ -93,7 +93,6 @@ Lacak-IP/
 ├── app.py               # Main app Flask
 ├── models.py            # Model database
 ├── migrations/          # Folder migrasi database
-├── venv/                # Virtual environment (tidak perlu di-push ke repo)
 └── README.md            # Dokumentasi
 ```
 ---
